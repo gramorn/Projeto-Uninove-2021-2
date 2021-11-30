@@ -1,0 +1,43 @@
+﻿@model IEnumerable<IdentityRole>
+
+@{
+    ViewBag.Title = "Todas as Funções";
+}
+
+<h1>Todas as Funções</h1>
+
+@if (Model.Any())
+{
+    <a class="btn btn-primary mb-3" style="width:auto" asp-controller="Administration" asp-action="CreateRole">Nova Função</a>
+    foreach (var role in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                ID da Função : @role.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@role.Name</h5>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" asp-controller="Administration" asp-action="EditRole" asp-route-id="@role.Id">Editar</a>
+                <a class="btn btn-danger">Excluir</a>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">
+            Nenhuma Função criada ainda
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">
+                Aperte o botão abaixo para criar uma nova função
+            </h5>
+            <a class="btn btn-primary" style="width:auto" asp-controller="Administration" asp-action="CreateRole">
+                Criar Função
+            </a>
+        </div>
+    </div>
+}
