@@ -1,7 +1,7 @@
 # **Triad Games**
 
 ## Dados da Turma
-* Dia da semana: **Quinta-Feira**
+* Dia da semana: **Quarta-Feira**
 * Período: **Noturno**
 
 ## Integrante
